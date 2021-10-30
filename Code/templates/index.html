@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>upload</title>
+</head>
+<style>
+    textarea {
+        width: 80%;
+        height: 100vh;
+    }
+</style>
+<script>
+    function toggle_display() {
+        // el = document.querySelector('.content_section');
+
+      //  if// (el.style.visibility == 'hidden') {
+            //el.style.visibility = 'visible'
+       // } else {
+       //     el.style.visibility = 'hidden'
+      //  } 
+        el = document.querySelector('.text_out')
+        elem = document.querySelector('.content_section');
+        if (elem.style.visibility == 'hidden') {
+            elem.style.visibility = 'visible'
+            el.style.visibility = 'hidden'
+
+        }
+        else {
+            elem.style.visibility = 'hidden'
+            el.style.visibility = 'visible'
+        }
+    }
+    function toggle_text() {
+        elem = document.querySelector('.text_out')
+        el = document.querySelector('.content_section');
+        if (elem.style.visibility == 'hidden') {
+            elem.style.visibility = 'visible'
+            el.style.visibility = 'hidden'
+
+        }
+        else {
+            elem.style.visibility = 'hidden'
+            el.style.visibility = 'visible'
+        }
+    }
+
+</script>
+
+<body>
+    <h1>Select type of input:</h1>
+    <button id='File' value='file input' name="File" onclick="toggle_display()">file input</button>
+    <button id='Text' value='text input' name="Text" onclick="toggle_text()">text input</button>
+    <form class="text_out" action="/success" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" value="Upload">
+    </form>
+    <form class="content_section" action="/success" method="post" enctype="multipart/form-data">
+        <!-- <input type="file" name="file" /> -->
+        <textarea type="text" name="file"></textarea>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+
+</html>

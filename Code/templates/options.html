@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>upload</title>
+</head>
+<style>
+    .btn-group button {
+        background-color: #04AA6D;
+        /* Green background */
+        border: 1px solid green;
+        /* Green border */
+        color: white;
+        /* White text */
+        /*padding: 10px 24px;
+        /* Some padding */
+        cursor: pointer;
+        margin-bottom: 5px;
+        /* Pointer/hand icon */
+        width: 15%;
+        /* Set a width if needed */
+        display: block;
+        /* Make the buttons appear below each other */
+    }
+
+    .btn-group button:not(:last-child) {
+        border-bottom: none;
+        /* Prevent double borders */
+    }
+
+    /* Add a background color on hover */
+    .btn-group button:hover {
+        background-color: #3e8e41;
+    }
+
+    .relative {
+        padding: 10px;
+        position: relative;
+        background-color: #fff;
+        margin: 10px;
+    }
+
+    .navitem {
+        display: inline-block;
+        width: 120px;
+        height: 30px;
+        text-align: center;
+        border: gray;
+        background-color: #E8562A;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <!-- <h1>{{name}}</h1> -->
+
+    <form action="/manoj" method="post" enctype="multipart/form-data">
+        <div class="relative">
+            <button class="navitem" type="submit" name="choice/consent" value="choice/consent"> Choice/Consent </button>
+            <button class="navitem" type="submit" name="security" value="security"> Security </button>
+        </div>
+        <!-- <a href="{{ url_for('caller', my_var='name') }}">Send my_value</a> -->
+        </form> 
+        <!-- <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('caller') }}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('caller') }}">First Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('caller') }}">Second Page</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>  -->
+
+        <ul>
+            {% for i in show%}
+            <h1>{{i.heading}}</h1>
+            {% for j in i.data%}
+            <li>{{j}}</li>
+            {% endfor %}
+
+            {% endfor %}
+        </ul>
+        <!-- <div name='name' style="text-align: right;">{{name}}</div> -->
+</body>
+
+</html>
