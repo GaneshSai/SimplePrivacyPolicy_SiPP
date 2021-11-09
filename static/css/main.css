@@ -1,0 +1,20 @@
+#logodiv { 
+    background-color: #4950BA;
+}
+
+.logo_text {
+    text-align: center;    
+}
+
+/*
+#logoimg { 
+    display: block;
+    margin: auto;
+}
+*/
+
+.topnav { 
+    background-color: #333;
+    overflow: hidden;
+}
+

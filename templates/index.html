@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>SiPP</title>
+    <script>
+        document.getElementById("").innerHTML = "My First JavaScript";
+    </script>        
+{% endblock %}
+{% block body %}
+    <form action = "#" method = 'GET'>
+        <select id="domain_dropdown" name="cars">
+            <option value = 'shopping' id = 'shopping'>shopping</option>
+            <option value = 'social_media' id = 'social_media'>social media</option>
+            <option value = 'messaging' id = 'messaging'>messaging</option>
+        </select>
+    </form>
+    <!-- 
+    <form action="SiPP.html" method = 'GET'>
+        <label for="myfile">Select files:</label>
+        <input type="file" id = "myfile" name="myfile" single><br><br>
+        <label for = 'policytext'>Policy text : </label>
+        <input type = 'text' id = 'policytext'>
+        <input type="submit">
+    </form>
+    -->
+{% endblock %}

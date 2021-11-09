@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %} {% endblock %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}">
+</head>
+<body>
+    <div id = 'logodiv'>
+        <!--
+        <a href="/"><img id = 'logoimg' src="{{url_for('static',filename = 'images/SiPP_logo.png')}}" alt="SiPP" width="500" height="170"></a>
+        -->
+        <a class = 'logo_text' href="/">text</a>
+    </div>
+    <div class = 'topnav'>
+        <a href="#">home</a>
+        <a href="#">away</a>
+    </div>
+    <!-- hex for logo background : #ffe600 -->
+    {% block body %} {% endblock %}
+</body>
+</html>
