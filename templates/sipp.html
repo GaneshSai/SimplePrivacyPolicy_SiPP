@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>View Policy</title>
+{% endblock %}
+{% block body %}
+    <h1>{{organization}}</h1>
+    <h4>Skim through the policy below. Scroll to the end of the page to proceed. </h4>
+    <div>
+        {{policy_text}}
+    </div>
+    <br>
+    <br>
+{% endblock %}
