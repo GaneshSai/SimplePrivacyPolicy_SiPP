@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script>
+</script>
+
+<body>
+    <!-- element.textContent = array.join('\n') -->
+    <!-- <div>{{show}}</div> -->
+    <!-- <div>{{show}}</div> -->
+    <!-- <h1>{{show['data']}}</h1> -->
+    <!-- <h1>{{show.heading}}</h1>-->
+    <ul>
+        {% for i in show%}
+          <h1>{{i.heading}}</h1>
+          {% for j in i.data%}
+             <li>{{j}}</li>
+          {% endfor %}
+
+        {% endfor %}
+    </ul> 
+
+    <!-- <p id="demo"></p> -->
+</body>
+
+</html>
