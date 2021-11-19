@@ -1,15 +1,90 @@
 {% extends "base.html" %}
 {% block head %}
-    <script>
-        function show_op() {
-            alert(document.getElementById(op_json));
-        }
-    </script>
+<script>
+    (function (window) {
+        window.htmlentities = {
+            /**
+             * Converts a string to its html characters completely.
+             *
+             * @param {String} str String with unescaped HTML characters
+             **/
+            encode: function (str) {
+                var buf = [];
+
+                for (var i = str.length - 1; i >= 0; i--) {
+                    buf.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
+                }
+
+                return buf.join('');
+            },
+            /**
+             * Converts an html characterSet into its original character.
+             *
+             * @param {String} str htmlSet entities
+             **/
+            decode: function (str) {
+                return str.replace(/&#(\d+);/g, function (match, dec) {
+                    return String.fromCharCode(dec);
+                });
+            }
+        };
+    })(window);
+    window.onload = function () {
+        Object.keys(inputObj["policy"]).forEach(key => {
+            document.getElementById("myBtn" + keyObj[key]).disabled = false;
+        });
+    };
+    var inputObjStr = htmlentities.decode("{{op_json}}");
+    inputObj = JSON.parse(inputObjStr.replaceAll("'", '"'));
+    var keyObj = {
+        "Data Retention": "dr",
+        "Data Security": "ds",
+        "Do Not Track": "dt",
+        "First Party Collection/Use": "fr",
+        "International and Specific Audiences": "is",
+        "Other": "ot",
+        "Policy Change": "pc",
+        "Third Party Sharing/Collection": "tp",
+        "User Access, Edit and Deletion": "ua",
+        "User Choice/Control": "uc",
+        "dr":"Data Retention",
+        "ds":"Data Security" ,
+        "dt":"Do Not Track",
+        "fr":"First Party Collection/Use",
+        "is":"International and Specific Audiences",
+        "ot":"Other",
+        "pc":"Policy Change",
+        "tp":"Third Party Sharing/Collection",
+        "ua":"User Access, Edit and Deletion",
+        "uc":"User Choice/Control"
+    }
+    function show_op(cat) {
+        var list = document.getElementById('data');
+        list.innerHTML = "";
+        inputObj['policy'][keyObj[cat]].forEach(subStr => {
+            let entry = document.createElement('li');
+            entry.appendChild(document.createTextNode(subStr));
+            list.appendChild(entry);
+        });
+    }
+</script>
 {% endblock %}
 {% block body %}
-    <form>
-        <textarea id = "op_json" value = {{op_json}}>{{op_json}}</textarea>
-    </form>
-    <br><br>
-    <button onclick="show_op()">select Policy</button>
+<div id="buttonToolbar">
+    <div style="justify-content: center;    align-items: center;    display: flex;     padding: 1rem;">
+        <button style="margin-left: 1rem;" onclick="show_op('dr')" id="myBtndr" disabled="true">Data Retention</button>
+        <button style="margin-left: 1rem;" onclick="show_op('fr')" id="myBtnfr" disabled="true">First Party Collection/Use</button>
+        <button style="margin-left: 1rem;" onclick="show_op('is')" id="myBtnis" disabled="true">International and Specific Audiences</button>
+        <button style="margin-left: 1rem;" onclick="show_op('pc')" id="myBtnpc" disabled="true">Policy Change</button>
+        <button style="margin-left: 1rem;" onclick="show_op('tp')" id="myBtntp" disabled="true">Third Party Sharing/Collection</button>
+    </div>
+    <div style="justify-content: center;    align-items: center;    display: flex;     padding: 1rem;">
+        <button style="margin-left: 1rem;" onclick="show_op('ua')" id="myBtnua" disabled="true">User Access, Edit and Deletion</button>
+        <button style="margin-left: 1rem;" onclick="show_op('uc')" id="myBtnuc" disabled="true">User Choice/Control</button>
+        <button style="margin-left: 1rem;" onclick="show_op('ds')" id="myBtnds" disabled="true">Data Security</button>
+        <button style="margin-left: 1rem;" onclick="show_op('dt')" id="myBtndt" disabled="true">Do Not Track</button>
+        <button style="margin-left: 1rem;" onclick="show_op('ot')" id="myBtnot" disabled="true">Other</button>
+    </div>
+</div>
+<ol id="data"></ol>
 {% endblock %}
