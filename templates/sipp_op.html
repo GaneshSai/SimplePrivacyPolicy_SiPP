@@ -58,9 +58,16 @@
         "ua":"User Access, Edit and Deletion",
         "uc":"User Choice/Control"
     }
+    window.selectedCat = null
     function show_op(cat) {
+        if (window.selectedCat != null) {
+            document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; background-color: #e7e7e7";
+        }
+        window.selectedCat = cat;
+        document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; background-color: #4CAF50";
         var list = document.getElementById('data');
         list.innerHTML = "";
+        document.getElementById('dataHead').innerHTML = keyObj[cat];
         inputObj['policy'][keyObj[cat]].forEach(subStr => {
             let entry = document.createElement('li');
             entry.appendChild(document.createTextNode(subStr));
@@ -72,19 +79,20 @@
 {% block body %}
 <div id="buttonToolbar">
     <div style="justify-content: center;    align-items: center;    display: flex;     padding: 1rem;">
-        <button style="margin-left: 1rem;" onclick="show_op('dr')" id="myBtndr" disabled="true">Data Retention</button>
-        <button style="margin-left: 1rem;" onclick="show_op('fr')" id="myBtnfr" disabled="true">First Party Collection/Use</button>
-        <button style="margin-left: 1rem;" onclick="show_op('is')" id="myBtnis" disabled="true">International and Specific Audiences</button>
-        <button style="margin-left: 1rem;" onclick="show_op('pc')" id="myBtnpc" disabled="true">Policy Change</button>
-        <button style="margin-left: 1rem;" onclick="show_op('tp')" id="myBtntp" disabled="true">Third Party Sharing/Collection</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7 " onclick="show_op('dr')" id="myBtndr" disabled="true">Data Retention</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7 " onclick="show_op('fr')" id="myBtnfr" disabled="true">First Party Collection/Use</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7 " onclick="show_op('is')" id="myBtnis" disabled="true">International and Specific Audiences</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7 " onclick="show_op('pc')" id="myBtnpc" disabled="true">Policy Change</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7 " onclick="show_op('tp')" id="myBtntp" disabled="true">Third Party Sharing/Collection</button>
     </div>
     <div style="justify-content: center;    align-items: center;    display: flex;     padding: 1rem;">
-        <button style="margin-left: 1rem;" onclick="show_op('ua')" id="myBtnua" disabled="true">User Access, Edit and Deletion</button>
-        <button style="margin-left: 1rem;" onclick="show_op('uc')" id="myBtnuc" disabled="true">User Choice/Control</button>
-        <button style="margin-left: 1rem;" onclick="show_op('ds')" id="myBtnds" disabled="true">Data Security</button>
-        <button style="margin-left: 1rem;" onclick="show_op('dt')" id="myBtndt" disabled="true">Do Not Track</button>
-        <button style="margin-left: 1rem;" onclick="show_op('ot')" id="myBtnot" disabled="true">Other</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7 " onclick="show_op('ua')" id="myBtnua" disabled="true">User Access, Edit and Deletion</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7 " onclick="show_op('uc')" id="myBtnuc" disabled="true">User Choice/Control</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7 " onclick="show_op('ds')" id="myBtnds" disabled="true">Data Security</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7 " onclick="show_op('dt')" id="myBtndt" disabled="true">Do Not Track</button>
+        <button style="margin-left: 1rem; background-color: #e7e7e7" onclick="show_op('ot')" id="myBtnot" disabled="true">Other</button>
     </div>
 </div>
+<h2 id="dataHead"></h2>
 <ol id="data"></ol>
 {% endblock %}
