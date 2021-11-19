@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block head %}
+    <script>
+        function show_op() {
+            alert(document.getElementById(op_json));
+        }
+    </script>
+{% endblock %}
+{% block body %}
+    <form>
+        <textarea id = "op_json" value = {{op_json}}>{{op_json}}</textarea>
+    </form>
+    <br><br>
+    <button onclick="show_op()">select Policy</button>
+{% endblock %}
