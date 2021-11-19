@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>SiPP Home</title>
+{% endblock %}
+{% block body %}
+    <form action = 'viewPolicy' method = 'POST'>
+            <!-- <select id='domain_dropdown' name='domain_dropdown'> -->
+    <!--
+        <label for = 'domain_drop'>Select Domain</label>
+        <br>
+        <br>
+        <select id='domain_dropdown' name = 'domain_drop'>
+            <option value = 'shopping' id = 'shopping'>shopping</option>
+            <option value = 'social_media' id = 'social_media'>social media</option>
+            <option value = 'messaging' id = 'messaging'>messaging</option>
+        </select>
+        <br>
+        <br>
+    -->
+        <label for = 'policy'>Select Policy</label>
+        <br>
+        <br>
+        <select class = 'policy' name = 'policy'>
+            <option id = 'shop_pol' value = 'amazon'>amazon</option>
+            <option id = 'shop_pol' value = 'flipkart'>flipkart</option>
+            <option id = 'social_pol' value = 'facebook'>facebook</option>
+            <option id = 'social_pol' value = 'linkedin'>linkedin</option>
+            <option id = 'chat_pol' value = 'telegram'>telegram</option>
+            <option id = 'chat_pol' value = 'whatsapp'>whatsapp</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="submit_policy"></input>
+    </form>
+{% endblock %}
