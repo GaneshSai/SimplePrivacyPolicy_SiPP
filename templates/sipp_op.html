@@ -67,6 +67,7 @@
         document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; border: 0; padding: 6px; background-color: #4CAF50; color: #fff";
         var list = document.getElementById('data');
         list.innerHTML = "";
+        document.getElementById('dataselect').innerHTML = "";
         document.getElementById('dataHead').innerHTML = keyObj[cat];
         inputObj['policy'][keyObj[cat]].forEach(subStr => {
             let entry = document.createElement('li');
@@ -95,4 +96,5 @@
 </div>
 <h2 id="dataHead"></h2>
 <ul id="data"></ul>
+<p style="justify-content: right;  display: flex;" id="dataselect">*Please select any of the category</p>
 {% endblock %}
