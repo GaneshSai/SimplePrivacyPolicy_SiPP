@@ -61,10 +61,10 @@
     window.selectedCat = null
     function show_op(cat) {
         if (window.selectedCat != null) {
-            document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; background-color: #e7e7e7";
+            document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; background-color: #e7e7e7; color: #000";
         }
         window.selectedCat = cat;
-        document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; background-color: #4CAF50";
+        document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; background-color: #4CAF50; color: #fff";
         var list = document.getElementById('data');
         list.innerHTML = "";
         document.getElementById('dataHead').innerHTML = keyObj[cat];
