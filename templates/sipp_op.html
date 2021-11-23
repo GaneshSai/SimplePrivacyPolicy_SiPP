@@ -64,7 +64,7 @@
             document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; border: 0; padding: 6px; background-color: #e7e7e7; color: #000";
         }
         window.selectedCat = cat;
-        document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; border: 0; padding: 6px; background-color: #4CAF50; color: #fff";
+        document.getElementById('myBtn'+window.selectedCat).style= "margin-left : 1rem; border: 0; padding: 6px; background-color: #333; color: #fff";
         var list = document.getElementById('data');
         list.innerHTML = "";
         document.getElementById('dataselect').innerHTML = "";
@@ -94,7 +94,11 @@
         <button style="margin-left: 1rem; border: 0; padding: 6px; background-color: #e7e7e7" onclick="show_op('ot')" id="myBtnot" disabled="true">Other</button>
     </div>
 </div>
-<h2 id="dataHead"></h2>
-<ul id="data"></ul>
+<div class = "sipp_statements">
+    <h2 id="dataHead"></h2>
+    <ul id="data"></ul>
+</div>
+
 <p style="justify-content: right;  display: flex;" id="dataselect">*Please select any of the category</p>
+
 {% endblock %}
