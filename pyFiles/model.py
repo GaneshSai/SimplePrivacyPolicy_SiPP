@@ -24,7 +24,7 @@ Output:
 
 '''
 
-def SiPP(policy_text): 
+def SiPP1(policy_text): 
     output_json = {
         "policy"  : {
             "Data Retention": ["Data Retention - 1", "Data Retention -  2"],
