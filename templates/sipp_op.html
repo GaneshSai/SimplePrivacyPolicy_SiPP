@@ -35,7 +35,7 @@
         });
     };
     var inputObjStr = htmlentities.decode("{{op_json}}");
-    inputObj = JSON.parse(inputObjStr.replaceAll("'", '"'));
+    inputObj = JSON.parse(inputObjStr.replaceAll("​",""));
     var keyObj = {
         "Data Retention": "dr",
         "Data Security": "ds",
