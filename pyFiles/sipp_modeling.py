@@ -171,6 +171,7 @@ def sipp_modeling(data):
         
         max_value = max(scores)
         index = scores.index(max_value)
+        sent = sent.replace("\"", "").replace("\'", "").replace("{", "").replace("}", "").replace("[", "").replace("]", "").replace(":", "")
         final_dict["policy"][categories[index]].append(sent)
         #final_dict["policy"][categories[index].append(sent)]
         #print(final_dict)
