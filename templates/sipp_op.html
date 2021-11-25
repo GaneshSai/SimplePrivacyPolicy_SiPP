@@ -31,11 +31,13 @@
     })(window);
     window.onload = function () {
         Object.keys(inputObj["policy"]).forEach(key => {
-            document.getElementById("myBtn" + keyObj[key]).disabled = false;
+            if(inputObj["policy"][key].length > 0){
+                document.getElementById("myBtn" + keyObj[key]).disabled = false;
+            }
         });
     };
     var inputObjStr = htmlentities.decode("{{op_json}}");
-    inputObj = JSON.parse(inputObjStr.replaceAll("​",""));
+    inputObj = JSON.parse(inputObjStr.replaceAll("\n",""));
     var keyObj = {
         "Data Retention": "dr",
         "Data Security": "ds",
