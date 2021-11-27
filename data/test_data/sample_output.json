@@ -1,0 +1,14 @@
+{
+    "policy"  : {
+        "Data Retention": ["Data Retention - This is sample sentence AAA", "Data Retention - This is sample sentence BBB"],
+        "First Party Collection/Use": ["First Party Collection/Use - This is sample sentence AAA", "First Party Collection/Use - This is sample sentence BBB"],
+        "International and Specific Audiences": ["International and Specific Audiences - This is sample sentence AAA", "International and Specific Audiences - This is sample sentence BBB"],
+        "Other": ["Other - This is sample sentence AAA", "Other - This is sample sentence BBB"],
+        "Policy Change": ["Policy Change - This is sample sentence AAA", "Policy Change - This is sample sentence BBB"],
+        "Third Party Sharing/Collection": ["Third Party Sharing/Collection - This is sample sentence AAA", "Third Party Sharing/Collection - This is sample sentence BBB"],
+        "User Access, Edit and Deletion": ["User Access, Edit and Deletion - This is sample sentence AAA", "User Access, Edit and Deletion - This is sample sentence BBB"],
+        "User Choice/Control": ["User Choice/Control - This is sample sentence AAA", "User Choice/Control - This is sample sentence BBB"],
+        "Data Security": ["Data Security - This is sample sentence AAA", "Data Security - This is sample sentence BBB"],
+        "Do Not Track": ["Do Not Track - This is sample sentence AAA", "Do Not Track - This is sample sentence BBB"]
+    }
+}
