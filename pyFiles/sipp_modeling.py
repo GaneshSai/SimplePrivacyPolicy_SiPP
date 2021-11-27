@@ -34,7 +34,7 @@ pd.set_option('display.max_columns', 500)
 w2v = downloader.load('glove-twitter-25')
 model_cos = SentenceTransformer('bert-base-nli-mean-tokens')
 
-ref_words =  pd.read_csv('./data/privacy words2.csv')
+ref_words =  pd.read_csv('./data/model_data/privacy words2.csv')
 ref_words = ref_words.set_index('categories')
 
 model0 = BertForSequenceClassification
@@ -118,7 +118,7 @@ def distance_cosine(set1,set2):
     return 1 - spatial.distance.cosine(set1, set2)
 
 # data loading
-testing= np.loadtxt("./data/ouput.txt").reshape(6,768)
+testing= np.loadtxt("./data/model_data/ouput.txt").reshape(6,768)
 
 def load_tokenize_policy():
     with open("./policy_files/amazon_privacy_policy.txt") as f:
@@ -173,7 +173,4 @@ def sipp_modeling(data):
         index = scores.index(max_value)
         sent = sent.replace("\"", "").replace("\'", "").replace("{", "").replace("}", "").replace("[", "").replace("]", "").replace(":", "")
         final_dict["policy"][categories[index]].append(sent)
-        #final_dict["policy"][categories[index].append(sent)]
-        #print(final_dict)
-        #print(type(final_dict))
     return final_dict
